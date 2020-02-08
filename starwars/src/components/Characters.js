@@ -1,14 +1,23 @@
 import React, {useState, useEffect} from  'react';
 import axios from 'axios';
 import CharacterCard from './CharacterCard'
+import styled from 'styled-components'
+
+const CharacterContainer = styled.div`
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  `;
+
 
 
 function CharactersList(){
 
     const [character, setCharacter] = useState([])
-
+ 
     useEffect ( () => {
-        axios.get('http https://swapi.co/api/people/?search=r2')
+        axios.get('https://swapi.co/api/people/')
         .then( response => {
             setCharacter(response.data.results)
         })
@@ -17,10 +26,10 @@ function CharactersList(){
     console.log(character)
     return (
         <div className='container'>
-            <div>
-                { character.map( (item, index) => {
+            <CharacterContainer>
+                { character.map( (item, keyIndex) => {
                     return <CharacterCard
-                    key={index}
+                    key={keyIndex}
                     name={item.name}
                     height={item.height}
                     mass={item.mass}
@@ -35,7 +44,7 @@ function CharactersList(){
                     />
                 })
                 }
-            </div>
+            </CharacterContainer>
 
         </div>
     )
