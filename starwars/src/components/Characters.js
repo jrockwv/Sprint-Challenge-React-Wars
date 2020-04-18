@@ -17,7 +17,7 @@ function CharactersList(){
     const [character, setCharacter] = useState([])
  
     useEffect ( () => {
-        axios.get('https://swapi.co/api/people/')
+        axios.get('https://rickandmortyapi.com/api/character')
         .then( response => {
             setCharacter(response.data.results)
         })
@@ -30,12 +30,15 @@ function CharactersList(){
                 { character.map( (item, keyIndex) => {
                     return <CharacterCard
                     key={keyIndex}
+                    id={item.id}
+                    status={item.status}
                     name={item.name}
-                    height={item.height}
+                    origin={item.origin}
                     mass={item.mass}
                     hair={item.hair_color}
                     skin={item.skin_color}
                     gender={item.gender}
+                    species={item.species}
                     home={item.home}
                     created={item.created}
                     edited={item.edited}

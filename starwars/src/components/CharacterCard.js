@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Cards = styled.div`
-    background-color: grey;
+    background-color: teal;
     padding: 5px;
     width: 400px;
     color: salmon;
@@ -21,14 +21,13 @@ const Cards = styled.div`
 function CharacterCard(props) {
     return (
       <Cards>
-        <h2>{props.name}</h2>
+        
+        <h2>{props.name}</h2>        
+        <img src= {props.image}/>
+        <p>Species: {props.species}</p>
         <p>Gender: {props.gender}</p>
-        <p>Height: {props.height}</p>
-        <p>Hair Color: {props.hair}</p>
-        <p>Eye Color: {props.eyes}</p>
-        <p>Skin: {props.skin}</p>
-        <p>Mass: {props.mass}</p>
-        <p>Year of birth: {props.birth}</p>
+        <p>Status: {props.status}</p>
+   
         
       </Cards>
     )
