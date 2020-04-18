@@ -13,7 +13,6 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <CharactersList/>
-      <h1 className="Header">Characters</h1>
     </div>
   );
 }
