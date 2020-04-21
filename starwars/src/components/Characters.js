@@ -44,6 +44,10 @@ function CharactersList(){
                     edited={item.edited}
                     eyes={item.eye_color}
                     birth={item.birth_year}
+                    image={item.image}
+                    origin={item.origin.name}
+                    locationUrl={item.origin.locationUrl}
+                    location={item.location.name}
                     />
                 })
                 }
